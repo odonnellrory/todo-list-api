@@ -1,0 +1,15 @@
+# Dependency directories
+node_modules/
+
+# Environment variables file
+.env
+
+# Editor directories and files
+.vscode/
+
+# Ignore package-lock.json
+package-lock.json
+
+# Logs
+*.log
+npm-debug.log*
