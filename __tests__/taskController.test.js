@@ -19,7 +19,7 @@ describe('Task Controller', () => {
             
             const response = await request(app).get('/api/tasks');
 
-            expect(response.status.toBe(200));
+            expect(response.status).toBe(200);
             expect(response.body.length).toBe(2);
             expect(response.body[0]).toHaveProperty('title', 'Test Task 1');
             expect(response.body[1]).toHaveProperty('title', 'Test Task 2');
