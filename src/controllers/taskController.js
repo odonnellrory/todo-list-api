@@ -5,7 +5,7 @@ exports.getAllTasks = async (request, response) => {
         const tasks = await Task.getAllTasks();
         response.json(tasks);
     } catch (error) {
-        response.status(500).json({ error: 'Server error' });
+        response.status(500).json({ error: 'Server error', details: error.message });
     }
 };
 
@@ -15,6 +15,6 @@ exports.createTask = async (request, response) => {
         const newTask = await Task.createTask(title);
         response.status(201).json(newTask);
     } catch (error) {
-        response.status(500).json({ error: 'Server Error'})
+        response.status(500).json({ error: 'Server Error', details: error.message })
     }
 }

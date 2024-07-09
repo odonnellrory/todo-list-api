@@ -2,6 +2,16 @@ const request = require('supertest');
 const app = require('../src/app');
 const pool = require('../src/db');
 
+
+beforeAll(async () => {
+    try {
+      await pool.query('SELECT 1');
+      console.log('Database connected successfully on taskController.test.');
+    } catch (error) {
+      console.error('Unable to connect to the database on taskController.test.  Logging Error:', error);
+    }
+  });
+
 describe('Task Controller', () => {
     beforeEach(async () => {
         // Clear the database before each test

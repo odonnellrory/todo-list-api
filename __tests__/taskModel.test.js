@@ -1,5 +1,16 @@
 const Task = require('../src/models/taskModel');
 const pool = require('../src/db');
+require('dotenv').config();
+
+
+beforeAll(async () => {
+    try {
+        await pool.query('SELECT 1');
+        console.log('Database connected succesfully on taskModel.test.');
+    } catch (error) {
+        console.error('Unable to connect to the database on taskModel.test.  Logging Error:', error);
+    }
+});
 
 describe('Task Model', () => {
     beforeEach(async () => {
