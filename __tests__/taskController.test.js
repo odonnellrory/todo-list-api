@@ -1,6 +1,7 @@
 const request = require('supertest');
 const app = require('../src/app');
 const pool = require('../src/db');
+require('dotenv').config();
 
 
 beforeAll(async () => {
